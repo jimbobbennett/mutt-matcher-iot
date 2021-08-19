@@ -1,6 +1,8 @@
 # Goal 0: Set up your Pi
 
-The goal here is to set up your Pi ready to use as an IoT device. This will take a while, but most of it is hands-off time waiting for SD cards to be imaged or updates to be installed, so it can be done concurrently with the other goals in this workshop.
+The goal here is to set up your Pi ready to use as an IoT device.
+
+> ⏱ This will take a while, but most of it is hands-off time waiting for SD cards to be imaged or updates to be installed, so it can be done concurrently with the other goals in this workshop.
 
 ## Flash an SD card
 
@@ -65,6 +67,6 @@ To make it easier to program the Pi, including copying source code onto the devi
 
 Follow the instructions in the [VS Code remote development using SSH documentation](https://code.visualstudio.com/docs/remote/ssh?WT.mc_id=academic-36256-jabenn) to connect VS Code to your Pi.
 
-## Congratulations 🎉
+## Next challenge
 
-Your team now has an IoT device ready to program.
+Once your Pi is ready, it's time to [train the ML model](./train-model).

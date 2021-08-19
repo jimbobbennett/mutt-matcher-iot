@@ -10,6 +10,6 @@ To install OpenCV, you can follow the instructions for your OS in the [Introduct
 
 The code for the IoT device is Python, so you will need to have a recent version of Python installed. You can install this from the [Python downloads page](https://www.python.org/downloads/) if you don't already have it installed.
 
-## Congratulations 🎉
+## Next challenge
 
-Your team now has a simulated IoT device ready to program.
+Once your Pi is ready, it's time to [train the ML model](./train-model).

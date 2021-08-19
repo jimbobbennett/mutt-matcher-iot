@@ -1,40 +1,67 @@
-# Goal: Provide a challenge-based scenario
+# Goal 1: Train your ML model
 
-As highlighted in the intro, the primary focus is around the scenario rather than the technology. We want to highlight what the hacker will do in real-world terms, to highlight the problems the various technologies solve.
+The Mutt Matcher will need to use a machine learning (ML) model to be able to detect different dog breeds in images. The ML model used is an image classifier - a model that can classify an image into different tags depending on what is in the image. These models are trained by giving them tagged images - multiple images for each tag.
 
-Use phrasing like "your team" to encourage teamwork, and to connect with the hacker.
+A typical image classifier needs many thousands if not millions of images to train, but you can take a shortcut using a technique called *transfer learning*. Transfer learning allows to take an image classifier trained on a wide range of tags, then re-train it using a small number of images for your tags.
 
-## The Azure Service (or other consistent header)
+Your team will use a cloud service that uses transfer learning to train an ML model to identify different dog breeds using images provided by the fictional animal shelter. These training images consist of a number of images of a range of breeds. You would use these to train the model, using the breed as the tag.
 
-We want to **briefly** introduce the technology we expect the hacker to use to complete the goal. A couple of paragraphs describing the benefits and common uses is perfect. We don't want to provide step-by-step instructions, but rather point to documentation and Learn modules in the [Resources](#resources) section.
+> ⏱ Training a model can take a while, so you can work on this concurrently with the other goals in the workshop.
+
+## The Azure Service
+
+[![The custom vision logo](./images/custom-vision-logo.png)](https://customvision.ai?WT.mc_id=academic-36256-jabenn)
+
+The transfer learning service to use is [Custom Vision](https://customvision.ai?WT.mc_id=academic-36256-jabenn). This is a service from Microsoft that can train image classifiers using only a small number of images for each tag. Once your model has been trained, it can be published to be run in the cloud, using one of the Custom Vision SDKs for programming languages such as Python, Java or C#, or via a REST API. You can also download your model and run it locally on an IoT device, a web page, or in an application.
+
+![An american staffordshire terrier detected with an 89.5% probability](./images/custom-vision-detect-dog.png)
+
+Image classifiers don't give a single fixed answer of the detected tag, instead they provide a list of all the tags that the model has been trained on with the probability that the image matches that tag. In the image above, the results show values against each tag:
+
+| Tag                            | Probability |
+| ------------------------------ | ----------: |
+| american-staffordshire-terrier |       89.5% |
+| german-wire-pointer            |        4.9% |
+| buggle                         |        3.2% |
+| australian-shepherd            |        2.0% |
+| shorkie                        |        0.0% |
+
+To use Custom Vision, you will need an [Azure subscription, such as Azure for Students](https://azure.microsoft.com/free/students/?WT.mc_id=academic-36256-jabenn). Custom Vision has a generous free tier, so this workshop will not use any of your Azure credit.
 
 ## Key files
 
-If there are any files part of the [starter code](./obtain-starter.md) the hacker will use or needs to be explained, you can do that in this section.
+The images you can use to train your model are in the [model-images](./model-images) folder. You will need to clone this GitHub repo (or download it as a zip file) to access these images. The images are in 2 different folders:
+
+- [training-images](./model-images/training-images) - these are the images to use to train the model. The filename contains the tag for the image, along with a number to make the files uniquely named. For example, `american-staffordshire-terrier-1.jpg`, `american-staffordshire-terrier-1.jpg`, and `american-staffordshire-terrier-3.jpg` are all images for the tag `american-staffordshire-terrier`.
+- [testing-images](./model-images/testing-images) - these are images you can use to test the image classifier once it is trained. These are different from the training images.
 
 ## Success criteria
 
-The success criteria should be **clearly** laid out so the hacker knows exactly what is expected of her. It's OK to use whatever technical terms are necessary to lay things out.
+Your team will work together to train the ML model using the training images, then test it with the testing images. Your team will have achieved this goal when the following success criteria is met:
 
-Examples:
+- Your model has been trained on all the images in the `training-images` folder
+- You have verified that the `testing-images` have the correct tags detected as the highest probability tag.
+- Your model has been published
 
-- The shelter's site has been successfully deployed to Azure Static Web Apps
-- Your team's IoT device sends data to Azure (or whatever IoT does)
-- Your team's bot is able to answer questions about the adoption process
-
+<!--
 ## Validation
 
-See Christopher for information about automating validation.
+**ToDo**
+-->
 
 ## Resources
 
-Provide a list of links to docs and Learn modules which provide the necessary steps the hacker needs to perform to achieve the goal. Include pointers to background information about the services as appropriate. Feel free to provide multiple options (CLI, Portal, Visual Studio Code, etc.) to complete the tasks.
+Your team might find these resources helpful:
 
-If docs or a Learn module isn't available, it's time to create one! One of the goals of this style of workshop is to validate the documentation. After all, when the hacker actually starts hacking they'll need to rely on documentation and Learn; if they can't, then this is a bug we should fix.
+- [Quickstart: Build a classifier with the Custom Vision website](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier?WT.mc_id=academic-36256-jabenn)
+- [Use your model with the prediction API](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/use-prediction-api?WT.mc_id=academic-36256-jabenn)
+- [Classify images learning model on Microsoft Learn](https://docs.microsoft.com/learn/modules/classify-images/?WT.mc_id=academic-36256-jabenn)
 
 ## Tips
 
-Provide any hints or other possible pitfalls for the student.
+- When you create the training and prediction resource, use the **Free F0** tier, as this is free to use!
+- When you train, use *Quick training*.
+- The training can take a while - even with quick training, so whilst your model is training, work on the other goals.
 
 ## Final result
 

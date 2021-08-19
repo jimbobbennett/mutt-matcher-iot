@@ -83,7 +83,7 @@ Your team will set up the Pi, ML model and IoT application, then connect everyth
 1. [Set up your Raspberry Pi and camera](set-up-pi.md): You will need to set up a clean install of Raspberry Pi OS on your Pi and ensure all the required software is installed.
     > 💻 If you are using a PC or Mac instead of a Pi, your team will need to [set this up instead](set-up-pc-mac.md).
 
-1. [Train your AI model](train-model.md): Your team will need to train the AI model in the cloud using Microsoft Custom Vision. You can train and test this model using the images that have been provided by the animal shelter.
+1. [Train your ML model](train-model.md): Your team will need to train the ML model in the cloud using Microsoft Custom Vision. You can train and test this model using the images that have been provided by the animal shelter.
 
 1. [Set up your IoT application](set-up-iot-central.md): Your team will set up an IoT application in the cloud using IoT Central, an IoT software-as-a-service (SaaS) platform. You will be provided with a pre-built application template to use.
 
