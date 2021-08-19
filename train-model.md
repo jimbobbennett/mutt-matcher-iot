@@ -35,19 +35,51 @@ The images you can use to train your model are in the [model-images](./model-ima
 - [training-images](./model-images/training-images) - these are the images to use to train the model. The filename contains the tag for the image, along with a number to make the files uniquely named. For example, `american-staffordshire-terrier-1.jpg`, `american-staffordshire-terrier-1.jpg`, and `american-staffordshire-terrier-3.jpg` are all images for the tag `american-staffordshire-terrier`.
 - [testing-images](./model-images/testing-images) - these are images you can use to test the image classifier once it is trained. These are different from the training images.
 
+> ⚠️ It is important that when you tag these images, you use the tag from the file name.
+
 ## Success criteria
 
 Your team will work together to train the ML model using the training images, then test it with the testing images. Your team will have achieved this goal when the following success criteria is met:
 
-- Your model has been trained on all the images in the `training-images` folder
-- You have verified that the `testing-images` have the correct tags detected as the highest probability tag.
-- Your model has been published
+- Your model has been trained on all the images in the `training-images` folder.
+- You have verified that the `testing-images` have the correct tags detected as the highest probability tag using the *Quick test* button.
+- Your model has been published.
 
-<!--
 ## Validation
 
-**ToDo**
--->
+You can validate your model using a Python script inside this repo.
+
+1. From wherever you cloned this repo, navigate to the `validation` folder.
+1. Create an activate a Python virtual environment. If you've not done this before, you can refer to the [Python creation of virtual environments documentation](https://docs.python.org/3/library/venv.html).
+1. Install the Pip packages in the `requirements.txt` file using the following command from inside the activated virtual environment:
+
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+1. Run the validation script using the following command:
+
+    ```sh
+    python validate-model.py
+    ```
+
+1. When prompted, enter the prediction key and the image file URL for your published model iteration. You can get these from the prediction API dialog from the **PredictionURL** button of the published iteration. You then need the *Image file* url and prediction key.
+
+    ![The prediction key and url dialog](./images/prediction-key-url.png)
+
+This validation script will take the testing images, and test them against the model to ensure the correct tag is found as the most probable. You will see output like the following:
+
+```output
+(.venv) ➜  validation git:(main) ✗ python validate-model.py
+ML model validation
+
+What is your prediction key?
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+What is your prediction URL?
+https://xxxxxxx.cognitiveservices.azure.com/customvision/v3.0/Prediction/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx/classify/iterations/Iteration1/image
+..........
+Validation passed!
+```
 
 ## Resources
 
@@ -60,13 +92,14 @@ Your team might find these resources helpful:
 ## Tips
 
 - When you create the training and prediction resource, use the **Free F0** tier, as this is free to use!
+- You **MUST** set the tags to be the breed name from the image file name. The validation script assumes this is the case, and the IoT application you will set up in the next goal relies on these names matching.
 - When you train, use *Quick training*.
 - The training can take a while - even with quick training, so whilst your model is training, work on the other goals.
 
 ## Final result
 
-Summarize what the hackers will have done, and provide a screenshot.
+![A published iteration of the model](./images/published-iteration.png)
 
 ## Next challenge
 
-A link to the next challenge.
+The next goal is to [deploy an IoT application to the cloud and configure an IoT device](./set-up-iot-central.md).
