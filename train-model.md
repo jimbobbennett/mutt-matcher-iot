@@ -20,11 +20,11 @@ Image classifiers don't give a single fixed answer of the detected tag, instead 
 
 | Tag                            | Probability |
 | ------------------------------ | ----------: |
-| american-staffordshire-terrier |       89.5% |
-| german-wire-pointer            |        4.9% |
-| buggle                         |        3.2% |
-| australian-shepherd            |        2.0% |
-| shorkie                        |        0.0% |
+| american-staffordshire-terrier |       69.8% |
+| german-wirehaired-pointer      |       28.2% |
+| buggle                         |        1.6% |
+| shorkie                        |        0.2% |
+| australian-shepherd            |        0.0% |
 
 To use Custom Vision, you will need an [Azure subscription, such as Azure for Students](https://azure.microsoft.com/free/students/?WT.mc_id=academic-36256-jabenn). Custom Vision has a generous free tier, so this workshop will not use any of your Azure credit.
 
