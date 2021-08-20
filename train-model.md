@@ -50,7 +50,9 @@ Your team will work together to train the ML model using the training images, th
 You can validate your model using a Python script inside this repo.
 
 1. From wherever you cloned this repo, navigate to the `validation` folder.
+
 1. Create an activate a Python virtual environment. If you've not done this before, you can refer to the [Python creation of virtual environments documentation](https://docs.python.org/3/library/venv.html).
+
 1. Install the Pip packages in the `requirements.txt` file using the following command from inside the activated virtual environment:
 
     ```sh

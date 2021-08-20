@@ -34,7 +34,42 @@ Your team will work together to create the IoT application and set up your Mutt 
 
 ## Validation
 
+You can validate that your IoT application has been set up correctly using a Python script inside this repo.
 
+1. You will need an API key for your IoT Central application. To get one, follow the instructions in the [Get an API token documentation](https://docs.microsoft.com/azure/iot-central/core/howto-authorize-rest-api?WT.mc_id=academic-36256-jabenn#get-an-api-token).
+
+1. From wherever you cloned this repo, navigate to the `validation` folder.
+
+1. Create an activate a Python virtual environment. If you've not done this before, you can refer to the [Python creation of virtual environments documentation](https://docs.python.org/3/library/venv.html).
+
+1. Install the Pip packages in the `requirements.txt` file using the following command from inside the activated virtual environment:
+
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+1. Run the validation script using the following command:
+
+    ```sh
+    python validate-iot-application.py
+    ```
+
+1. When prompted, enter the API token, and the URL of your application.
+
+This validation script will take the testing images, and test them against the model to ensure the correct tag is found as the most probable. You will see output like the following:
+
+```output
+(.venv) ➜  validation git:(main) ✗ python3 validate-iot-application.py
+IoT application validation
+What is your IoT application API token?
+SharedAccessSignature sr=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx&sig=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=Validation&se=1660961122741
+What is your application URL?
+https://mutt-matcher.azureiotcentral.com/
+Connecting as device mutt-matcher
+Connected
+Command received: DetectBreed
+Validation passed!
+```
 
 ## Resources
 
