@@ -6,7 +6,9 @@ Different breeds have different needs, or react differently to people, so when a
 
 ![A Raspberry Pi with a camera](./images/mutt-matcher-device.png)
 
-Your team has been asked by a fictional animal shelter to build a Mutt Matcher - a device to help determine the breed of a dog when it has been found. This will be an IoT (Internet of Things) device based around a Raspberry Pi with a camera, and will take a photo of the dog, and then use an image classifier Machine learning (ML) model to determine the breed. This device will help workers and volunteers to be able to quickly detect the breed and make decisions on the best way to approach and care for the dog.
+Your team has been asked by a fictional animal shelter to build a Mutt Matcher - a device to help determine the breed of a dog when it has been found. This will be an IoT (Internet of Things) device based around a Raspberry Pi with a camera, and will take a photo of the dog, and then use an image classifier Machine learning (ML) model to determine the breed, before uploading the results to a web-based IoT application.
+
+This device will help workers and volunteers to be able to quickly detect the breed and make decisions on the best way to approach and care for the dog.
 
 ![An application dashboard showing the last detected breed as a German wire pointer, as well as a pie chart of detected breeds](./images/iot-central-dashboard.png)
 
@@ -44,7 +46,15 @@ Each member of your team will also need the following software installed:
 
 ## Resources
 
-A series of resources will be provided to help your team determine the appropriate steps for completion. The resources provided should provide your team with enough information to achieve each goal. If you get stuck, you can always ask a mentor for additional help.
+A series of resources will be provided to help your team determine the appropriate steps for completion. The resources provided should provide your team with enough information to achieve each goal.
+
+These resources include:
+
+- Appropriate links to documentation to learn more about the services you are using and how to do common tasks
+- A pre-built application template for the cloud service part of your IoT application
+- Full source code for your IoT device
+
+If you get stuck, you can always ask a mentor for additional help.
 
 ## Exploring the application
 
@@ -78,7 +88,7 @@ When a dog breed needs to be detected:
 
 Your team will set up the Pi, ML model and IoT application, then connect everything to gether by deploying code to the IoT device.
 
-> 💁 Each goal below defines what you need to achieve, and points you to relevant on-line resources that will show you how the cloud services or tools work. The aim here is not to spoon-feed you every step, but allow you to explore the documentation and learn more about the services as you work out how to complete each goal.
+> 💁 Each goal below defines what you need to achieve, and points you to relevant on-line resources that will show you how the cloud services or tools work. The aim here is not to provide you with detailed steps to complete the task, but allow you to explore the documentation and learn more about the services as you work out how to complete each goal.
 
 1. [Set up your Raspberry Pi and camera](set-up-pi.md): You will need to set up a clean install of Raspberry Pi OS on your Pi and ensure all the required software is installed.
     > 💻 If you are using a PC or Mac instead of a Pi, your team will need to [set this up instead](set-up-pc-mac.md).
@@ -87,42 +97,45 @@ Your team will set up the Pi, ML model and IoT application, then connect everyth
 
 1. [Set up your IoT application](set-up-iot-central.md): Your team will set up an IoT application in the cloud using IoT Central, an IoT software-as-a-service (SaaS) platform. You will be provided with a pre-built application template to use.
 
-1. [Deploy code to your IoT device](deploy-device-code.md): The code for the IoT device needs to be configured and deployed to the Raspberry Pi. You will then be able to test out your application.
+1. [Deploy device code to your Pi](deploy-device-code.md): The code for the IoT device needs to be configured and deployed to the Raspberry Pi. You will then be able to test out your application.
+    > 💻 If you are using a PC or Mac instead of a Pi, your team will need to [run the device code locally](run-code-locally.md).
 
-> 💁 The first 3 steps can be run concurrently, with different team members working on different steps. Once these 3 are completed, the final step can be worked on by the team.
+> 💁 The first 3 goals can be worked on concurrently, with different team members working on different steps. Once these 3 are completed, the final step can be worked on by the team.
 
 ## Validation
 
-This workshop is designed to be a goal-oriented self-exploration of Azure and related technologies. Your team can validate by using the IoT device to take a picture of one of the provided testing images and ensuring the correct result appears in the IoT application.
+This workshop is designed to be a goal-oriented self-exploration of Azure and related technologies. Your team can validate some of the goals using the supplied validation scripts, and instructions are provided where relevant. Your team can then validate the final solution by using the IoT device to take a picture of one of the provided testing images and ensuring the correct result appears in the IoT application.
 
 ## Where do we go from here?
 
-This project is designed as a potential seed for ideas future development during your hackathon. Other uses for similar IoT devices that use image classification include:
+This project is designed as a potential seed for ideas and future development during your hackathon. Other hack ideas for similar IoT devices that use image classification include:
 
-- Trash sorting into landfill, recycling, and compost
+- Trash sorting into landfill, recycling, and compost.
 
-- Identification of disease in plant leaves
+- Identification of disease in plant leaves.
 
-- Detecting skin cancer by classification of moles
+- Detecting skin cancer by classification of moles.
 
-Other improvements you could make to this device:
+Improvements you could make to this device include:
 
-- Adding hardware such as a button to take a photograph, instead of relying on the IoT application
+- Adding hardware such as a button to take a photograph, instead of relying on the IoT application.
 
-- Adding a screen or LCD display to the IoT device to show the breed
+- Adding a screen or LCD display to the IoT device to show the breed.
 
-- Migrating the image classifier to the edge to allow the device to run without connectivity
+- Migrating the image classifier to the edge to allow the device to run without connectivity using [Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/about-iot-edge?WT.mc_id=academic-36256-jabenn).
 
 ### Learn more
 
 You can learn more about using Custom Vision to train image classifiers and object detectors using the following resources:
 
 - [Custom Vision documentation](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/?WT.mc_id=academic-36256-jabenn)
+
 - [Custom Vision modules on Microsoft Learn, a free, hands-on, self-guided learning platform](https://docs.microsoft.com/users/jimbobbennett/collections/qe2ehjny7z7zgd?WT.mc_id=academic-36256-jabenn)
 
 You can learn more about Azure IoT Central using the following resources:
 
 - [IoT Central documentation](https://docs.microsoft.com/azure/iot-central/?WT.mc_id=academic-36256-jabenn)
+
 - [IoT Central modules on Microsoft Learn, a free, hands-on, self-guided learning platform](https://docs.microsoft.com/users/jimbobbennett/collections/o5w5c3eyre61x7?WT.mc_id=academic-36256-jabenn)
 
 If you enjoy working with IoT, you can learn more using the following resource:

@@ -98,6 +98,7 @@ async def main():
     response = requests.get(telemetry_url, headers=headers)
 
     telemetry_value = response.json()['value']
+    print(f'Last detected breed: {telemetry_value}')
     if telemetry_value != 'american-staffordshire-terrier':
         print(f'Validation failed - unable to read back the expected telemetry. Value received was {telemetry_value}')
         exit(1)

@@ -1,6 +1,6 @@
 # Goal 1: Train your ML model
 
-The Mutt Matcher will need to use a machine learning (ML) model to be able to detect different dog breeds in images. The ML model used is an image classifier - a model that can classify an image into different tags depending on what is in the image. These models are trained by giving them tagged images - multiple images for each tag.
+The Mutt Matcher will need to use a machine learning (ML) model to be able to detect different dog breeds in images. The ML model used is an image classifier - a model that can classify an image into different tags depending on what is in the image. These models are trained by giving them tagged images - multiple images for each tag. For example, you can train a model with images tagged as `cat`, and images tagged as `dog`. The model can then be given a new image and it will predict if the image should be a `cat` or a `dog`.
 
 A typical image classifier needs many thousands if not millions of images to train, but you can take a shortcut using a technique called *transfer learning*. Transfer learning allows to take an image classifier trained on a wide range of tags, then re-train it using a small number of images for your tags.
 
@@ -26,9 +26,9 @@ Image classifiers don't give a single fixed answer of the detected tag, instead 
 | shorkie                        |        0.2% |
 | australian-shepherd            |        0.0% |
 
-To use Custom Vision, you will need an [Azure subscription, such as Azure for Students](https://azure.microsoft.com/free/students/?WT.mc_id=academic-36256-jabenn). Custom Vision has a generous free tier, so this workshop will not use any of your Azure credit.
+To use Custom Vision, you will need an [Azure for Students subscription](https://azure.microsoft.com/free/students/?WT.mc_id=academic-36256-jabenn). Custom Vision has a generous free tier, so this workshop will not use any of your Azure credit.
 
-## Key files
+## Image files
 
 The images you can use to train your model are in the [model-images](./model-images) folder. You will need to clone this GitHub repo (or download it as a zip file) to access these images. The images are in 2 different folders:
 
@@ -43,7 +43,7 @@ Your team will work together to train the ML model using the training images, th
 
 - Your model has been trained on all the images in the `training-images` folder.
 - You have verified that the `testing-images` have the correct tags detected as the highest probability tag using the *Quick test* button.
-- Your model has been published.
+- Your model has a published iteration.
 
 ## Validation
 
@@ -51,7 +51,7 @@ You can validate your model using a Python script inside this repo.
 
 1. From wherever you cloned this repo, navigate to the `validation` folder.
 
-1. Create an activate a Python virtual environment. If you've not done this before, you can refer to the [Python creation of virtual environments documentation](https://docs.python.org/3/library/venv.html).
+1. Create and activate a Python 3 virtual environment. If you've not done this before, you can refer to the [Python creation of virtual environments documentation](https://docs.python.org/3/library/venv.html).
 
 1. Install the Pip packages in the `requirements.txt` file using the following command from inside the activated virtual environment:
 
@@ -65,7 +65,7 @@ You can validate your model using a Python script inside this repo.
     python validate-model.py
     ```
 
-1. When prompted, enter the prediction key and the image file URL for your published model iteration. You can get these from the prediction API dialog from the **PredictionURL** button of the published iteration. You then need the *Image file* url and prediction key.
+1. When prompted, enter the prediction key and the image file URL for your published model iteration. You can get these from the prediction API dialog from the **Prediction URL** button of the published iteration. You then need the *Image file* url and prediction key.
 
     ![The prediction key and url dialog](./images/prediction-key-url.png)
 
@@ -89,7 +89,7 @@ Your team might find these resources helpful:
 
 - [Quickstart: Build a classifier with the Custom Vision website](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier?WT.mc_id=academic-36256-jabenn)
 - [Use your model with the prediction API](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/use-prediction-api?WT.mc_id=academic-36256-jabenn)
-- [Classify images learning model on Microsoft Learn](https://docs.microsoft.com/learn/modules/classify-images/?WT.mc_id=academic-36256-jabenn)
+- [Classify images learning module on Microsoft Learn](https://docs.microsoft.com/learn/modules/classify-images/?WT.mc_id=academic-36256-jabenn)
 
 ## Tips
 

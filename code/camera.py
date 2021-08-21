@@ -10,7 +10,13 @@ import os
 import time
 
 from dotenv import load_dotenv
-from picamera import PiCamera
+
+# Allow PiCamera to fail as local versions won't have a camera
+try:
+    from picamera import PiCamera
+except:
+    pass
+
 import cv2
 
 CAMERA_ROTATION = 180
