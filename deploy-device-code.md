@@ -10,15 +10,17 @@ The code has been provided for you in the [code](./code) folder, so make sure yo
 
 The code has the following files:
 
-| File                   | Description                                                                                                                 |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| .env                   | This file contains configuration for the app                                                                                |
-| app.py                 | This file contains the core application logic                                                                               |
-| camera.py              | This file contains the `Camera` class that interacts with the Raspberry Pi Camera module or USB web cam to capture images   |
-| classifier.py          | This file contains the `Classifier` class that uses the Custom Vision image classifier to classify an image from the camera |
-| device_client.py       | This file contains the `DeviceClient` class that connects to IoT Central, listens for commands and sends telemetry          |
-| requirements.txt       | This file contains the Pip packages that are needed to run this code on a Raspberry Pi                                      |
-| requirements-macos.txt | This file contains the Pip packages that are needed to run this code on a Raspberry Pi                                      |
+| File                     | Description                                                                                                                 |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| .env                     | This file contains configuration for the app                                                                                |
+| app.py                   | This file contains the core application logic                                                                               |
+| camera.py                | This file contains the `Camera` class that interacts with the Raspberry Pi Camera module or USB web cam to capture images   |
+| classifier.py            | This file contains the `Classifier` class that uses the Custom Vision image classifier to classify an image from the camera |
+| device_client.py         | This file contains the `DeviceClient` class that connects to IoT Central, listens for commands and sends telemetry          |
+| requirements.txt         | This file contains the Pip packages that are needed to run this code on a Raspberry Pi                                      |
+| requirements-linux.tx  t | This file contains the Pip packages that are needed to run this code on Linux                                               |
+| requirements-macos.txt   | This file contains the Pip packages that are needed to run this code on macOS                                               |
+| requirements-windows.txt | This file contains the Pip packages that are needed to run this code on Windows                                             |
 
 Take some time to read this code and understand what it does, particularly the `device_client.py` and `classifier.py` files. These use the `azure-iot-device` abd `azure-cognitiveservices-vision-customvision` Pip packages respectively to work with the various cloud services.
 
@@ -40,7 +42,9 @@ pip3 install requirements.txt
 ```
 
 - If you are using a Raspberry Pi, use `requirements.txt`
+- If you are using Linux, use `requirements-linux.txt`
 - If you are using macOS, use `requirements-macos.txt`
+- If you are using Windows, use `requirements-windows.txt`
 
 This code needs to be run with Python 3. Raspberry Pi's come with Python 2 as well as Python 3.
 
@@ -75,6 +79,8 @@ Have a mentor check your device. They should be able to point the device at an o
 - Unless you have a dog of the relevant breed handy, you can test the app out by loading one of the pictures from the [model-images/testing-images](./model-images/testing-images) and having that on your screen, then pointing the camera on the Mutt Matcher at your screen.
 
 - The `requirements-macos.txt` file has been tested on an M1 mac running macOS Big Sur 11.5.2. If you have any issues on other configurations, you may need to change the versions of the Pip packages installed.
+
+- The `requirements-windows.txt` file has been tested on a Intel PC running Windows 10 21H1. If you have any issues on other configurations, you may need to change the versions of the Pip packages installed.
 
 ## Final result
 
