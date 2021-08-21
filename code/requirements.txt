@@ -1,5 +1,6 @@
-azure-cognitiveservices-vision-customvision
-azure-iot-device
+azure-cognitiveservices-vision-customvision==3.1.0
+azure-iot-device==2.7.1
 opencv-contrib-python==4.1.0.25
-picamera
-python-dotenv
+picamera==1.13
+python-dotenv==0.19.0
+requests==2.26.0
