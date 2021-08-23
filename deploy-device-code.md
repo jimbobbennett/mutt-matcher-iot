@@ -38,7 +38,7 @@ The configuration for the code is in the `.env` file. You will need to set the f
 You will need to install the Pip packages from one of the `requirements.txt` files:
 
 ```sh
-pip3 install requirements.txt
+pip3 install -r requirements.txt
 ```
 
 - If you are using a Raspberry Pi, use `requirements.txt`
